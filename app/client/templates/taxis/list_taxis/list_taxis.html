@@ -1,0 +1,43 @@
+<template name="ListTaxis">
+  <h1>Taxis List</h1>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Number</th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Body Style</th>
+      <th>Power</th>
+      <th>Colour</th>
+      <th>Capacity</th>
+      <th>Maximum Luggage</th>
+      <th>Motor expiry</th>
+      <th>Insurance number</th>
+      <th>Insurance expiry</th>
+      <th>PCO license</th>
+      <th>PCO license expiry</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each taxis}}
+    <tr>
+      <td>{{number}}</td>
+      <td>{{manufacturer}}</td>
+      <td>{{model}}</td>
+      <td>{{bodystyle}}</td>
+      <td>{{power}}</td>
+      <td>{{colour}}</td>
+      <td>{{capacity}}</td>
+      <td>{{maximumluggage}}</td>
+      <td>{{motorexpiry}}</td>
+      <td>{{insurancenumber}}</td>
+      <td>{{insuranceexpirydate}}</td>
+      <td>{{pcolicensenumber}}</td>
+      <td>{{pcolicenseexpirydate}}</td>
+      <td>{{#linkTo route='editTaxi'}}<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>{{/linkTo}}</td>
+    </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</template>
