@@ -13,8 +13,24 @@
       <div class="collapse navbar-collapse" id="navigationbar">
         <ul class="nav navbar-nav navbar-right">
           <li>{{#linkTo route="home"}}Home{{/linkTo}}</li>
-          <li>{{#linkTo route="taxisList"}}Taxis{{/linkTo}}</li>
-          <li>{{#linkTo route="createTaxi"}}Create New Taxi{{/linkTo}}</li>
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              Taxis<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>{{#linkTo route="taxisList"}}All{{/linkTo}}</li>
+              <li>{{#linkTo route="createTaxi"}}Add taxi{{/linkTo}}</li>
+            </ul>
+          </li>
+          <li role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              Drivers<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>{{#linkTo route="driversList"}}All{{/linkTo}}</li>
+              <li>{{#linkTo route="createDriver"}}Add driver{{/linkTo}}</li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
