@@ -4,9 +4,9 @@ DriversController = RouteController.extend({
   // this.subscribe('items');
   // // add the subscription to the waitlist
   // this.subscribe('item', this.params._id).wait();
-  
+
   subscriptions: function() {
-    this.subscribe('drivers')
+    this.subscribe('drivers');
   },
   
   // Subscriptions or other things we want to "wait" on. This also
@@ -28,7 +28,6 @@ DriversController = RouteController.extend({
   },
 
   create: function(){
-    console.log('I am in create.')
     this.render('CreateDriver',{});
   },
   list: function() {

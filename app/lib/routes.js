@@ -38,3 +38,11 @@ Router.route('/drivers/create', {
   action: 'create',
   where: 'client'
 });
+
+
+Router.route('/drivers', {
+  name: 'driversList',
+  controller: 'DriversController',
+  action: 'list',
+  where: 'client'
+});

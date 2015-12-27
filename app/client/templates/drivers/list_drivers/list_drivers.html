@@ -1,0 +1,67 @@
+<template name="ListDrivers">
+  <div class="list-drivers">
+    <h1>All drivers</h1>
+    {{#if drivers}}
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Dob</th>
+        <th>Mobile</th>
+        <th>License no</th>
+        <th>License expiry</th>
+        <th>PCO license no</th>
+        <th>PCO license expiry</th>
+        <th>Insurance number</th>
+        <th>Insurance expiry</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each drivers}}
+      <tr>
+        <td>{{fname}}</td>
+        <td>{{lname}}</td>
+        <td>{{email}}</td>
+        <td>{{gender}}</td>
+        <td>{{dob}}</td>
+        <td>{{mobile}}</td>
+        <td>{{licensenumber}}</td>
+        <td>{{licenseexpirydate}}</td>
+        <td>{{pcolicensenumber}}</td>
+        <td>{{pcolicenseexpirydate}}</td>
+        <td>{{insurancenumber}}</td>
+        <td>{{insuranceexpirydate}}</td>
+        <td>{{#if addressline1}}
+              {{addressline1}},
+            {{/if}}
+            {{#if addressline2}}
+              {{addressline2}},
+            {{/if}}
+            {{#if city}}
+              {{city}},
+            {{/if}}
+            {{#if state}}
+              {{state}},
+            {{/if}}
+            {{#if postal}}
+              {{postal}},
+            {{/if}}
+            {{#if country}}
+              {{country}}
+            {{/if}}
+            </td>
+        <td>Edit, Delete</td>
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>
+    {{else}}
+      <div>There are no drivers</div>
+    {{/if}}
+  </div>
+</template>
