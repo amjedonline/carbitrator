@@ -31,3 +31,10 @@ Router.route('/taxis/:_id', {
   action: 'edit',
   where: 'client'
 });
+
+Router.route('/drivers/create', {
+  name: 'createDriver',
+  controller: 'DriversController',
+  action: 'create',
+  where: 'client'
+});

@@ -1,8 +1,8 @@
-Drivers = new Mongo.Collection('driver');
+Drivers = new Mongo.Collection('drivers');
 
 
 if (Meteor.isServer) {
-  Driver.allow({
+  Drivers.allow({
     insert: function (userId, doc) {
       return true;
     },
@@ -16,7 +16,7 @@ if (Meteor.isServer) {
     }
   });
 
-  Driver.deny({
+  Drivers.deny({
     insert: function (userId, doc) {
       return false;
     },
