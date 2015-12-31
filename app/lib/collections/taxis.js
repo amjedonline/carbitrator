@@ -99,3 +99,30 @@ Taxis.attachSchema(new SimpleSchema({
     optional: true
   }
 }));
+
+TabularTables = {};
+
+TabularTables.Taxis = new Tabular.Table({
+  name: "Taxis",
+  collection: Taxis,
+  columns: [
+    {data: "number", title: "Number"},
+    {data: "manufacturer", title: "Manufacturer"},
+    {data: "model", title: "Model"},
+    {
+      data: "funfactor",
+      title: "Fun factor",
+      render: function (val, type, doc) {
+        if (type === 'bodystyle' && val === 'Coupes') {
+          return "5";
+        } else {
+          return "3";
+        }
+      }
+    },
+    {data: "summary", title: "Summary"},
+    {
+      tmpl: Meteor.isClient && Template.bookCheckOutCell
+    }
+  ]
+});
