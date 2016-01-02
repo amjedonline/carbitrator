@@ -30,24 +30,25 @@ Router.route('/taxis/location', {where: 'server'})
 
     .get(function () {
         //var res = this.response;
-        var query = this.request.query;
-        var lat = query.lat;
-        var lon = query.lon;
-        var dist = query.dist;
+        const query = this.request.query;
+        const lat = query.lat;
+        const lon = query.lon;
+        const dist = query.dist;
         if (lat == undefined || lon == undefined) {
-            var message = "Bad Request";
+            const message = "Bad Request";
             this.response.statusCode = 400;
             this.response.end(message);
         }
-        var result = Meteor.call('getAvailableTaxisByLocation', lat, lon, dist);
+        const result = Meteor.call('getAvailableTaxisByLocation', lat, lon, dist);
         if (result == null) {
             this.response.statusCode = 404;
-            this.response.end("No taxis found for (" + lat + ", " + lon + ")");
+            const message = "No taxis found for (" + lat + ", " + lon + ")";
+            this.response.end(message);
         } else {
             this.response.statusCode = 200;
-            var message = "Found " + result.length + " taxis " + "for (" + lat + ", " + lon + ")";
+            const message = "Found " + result.length + " taxis " + "for (" + lat + ", " + lon + ")";
             console.log(message);
-            var json = JSON.stringify(result);
+            const json = JSON.stringify(result);
             this.response.end(json);
         }
 

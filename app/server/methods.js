@@ -14,7 +14,7 @@ Meteor.methods({
             dist = DIST_IN_M;
         }
         console.log("Finding taxis nearby: pos(" + lat + ", " + lon + ")");
-        var result = Taxis.find({
+        const result = Taxis.find({
             location: {
                 $near: {
                     $geometry: {type: "Point", "coordinates": [parseFloat(lon), parseFloat(lat)]},
