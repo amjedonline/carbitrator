@@ -132,3 +132,26 @@ Drivers.attachSchema(new SimpleSchema({
     optional: true
   }
 }));
+
+
+TabularTables = {};
+
+TabularTables.Drivers = new Tabular.Table({
+  name: "Drivers",
+  collection: Drivers,
+  columns: [
+    {data: "fname", title: "First name"},
+    {data: "lname", title: "Last name"},
+    {data: "email", title: "Email"},
+    {data: "mobile", title: "Mobile"},
+    {data: "licensenumber", title: "License no"},
+    {data: "insurancenumber", title: "Insurance number"},
+    {data: "mobile", title: "Mobile"},
+    {data: "mobile", title: "Mobile"},
+
+    {data: "summary", title: "Summary"},
+    {
+      tmpl: Meteor.isClient && Template.bookCheckOutCell
+    }
+  ]
+});

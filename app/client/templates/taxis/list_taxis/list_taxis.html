@@ -21,6 +21,8 @@
       <th>Insurance expiry</th>
       <th>PCO license</th>
       <th>PCO license expiry</th>
+        <th>Status</th>
+        <th>Location</th>
       <th>Actions</th>
     </tr>
     </thead>
@@ -40,6 +42,8 @@
       <td>{{insuranceexpirydate}}</td>
       <td>{{pcolicensenumber}}</td>
       <td>{{pcolicenseexpirydate}}</td>
+        <td>{{status}}</td>
+        <td>{{location.coordinates}}</td>
       <td>{{#linkTo route='editTaxi'}}<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>{{/linkTo}}</td>
     </tr>
     {{/each}}

@@ -31,7 +31,51 @@ if (Meteor.isServer) {
   });
 }
 
-Taxis.attachSchema(new SimpleSchema({
+Location = new SimpleSchema({
+  lon: {
+    type: Number,
+    label: "Longitude",
+    min: -180,
+    max: 180
+  },
+  lat: {
+    type: Number,
+    label: "Latitude",
+    min: -90,
+    max: 90
+  }
+});
+
+LocationSchema = new SimpleSchema({
+  "type":{
+    type: String,
+    allowedValues: ["Point"]
+  },
+  "coordinates":{
+    type: Array,
+    minCount: 2,
+    maxCount: 2
+  },
+  "coordinates.$":{
+    type: Number,
+    decimal: true,
+    custom: function(){
+      if(!(-90 <= this.value[0] <= 90))
+        return "lonOutOfRange" ;
+      if(!(-180 <= this.value[1] <= 180))
+        return "latOutOfRange" ;
+    }
+
+  }
+});
+
+LocationSchema.messages = {
+  lonOutOfRange: 'Longitude out of range', // Must be between -90 and 90
+  latOutOfRange: 'Latitude out of range' // Must be between -180 and 180
+}
+
+
+TaxiSchema = new SimpleSchema({
   number: {
     type: String,
     label: "Number",
@@ -40,7 +84,7 @@ Taxis.attachSchema(new SimpleSchema({
   manufacturer: {
     type: String,
     label: "Manufacturer",
-    allowedValues: ['Audi', 'Mercedez', 'Volkswagen', 'BMW', 'Toyota', 'Citron', 'Suzuki', 'Renault'],
+    allowedValues: ['Audi', 'Mercedes', 'Volkswagen', 'BMW', 'Toyota', 'Citron', 'Suzuki', 'Renault'],
   },
   model: {
     type: String,
@@ -96,9 +140,18 @@ Taxis.attachSchema(new SimpleSchema({
   pcolicenseexpirydate: {
     type: String,
     label: "PCO License expiry date",
-    optional: true
+        optional: true
+    },
+  status: {
+    type: String,
+    label: "Status",
+    allowedValues: ['Online', 'Offline', 'Blocked']
+    },
+    location : {
+      type: LocationSchema,
+      label: "Location"
   }
-}));
+});
 
 TabularTables = {};
 
@@ -109,6 +162,7 @@ TabularTables.Taxis = new Tabular.Table({
     {data: "number", title: "Number"},
     {data: "manufacturer", title: "Manufacturer"},
     {data: "model", title: "Model"},
+    {data: "status", title: "Status"},
     {
       data: "funfactor",
       title: "Fun factor",
@@ -126,3 +180,6 @@ TabularTables.Taxis = new Tabular.Table({
     }
   ]
 });
+
+Taxis.attachSchema(TaxiSchema);
+
