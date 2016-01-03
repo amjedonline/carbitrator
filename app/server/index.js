@@ -1,0 +1,1 @@
+Taxis._ensureIndex({"location": "2dsphere"});
