@@ -147,7 +147,7 @@ TaxiSchema = new SimpleSchema({
     label: "Status",
     allowedValues: ['Online', 'Offline', 'Blocked']
     },
-    location : {
+  location : {
       type: LocationSchema,
       label: "Location"
   }

@@ -74,3 +74,8 @@ Router.route('/drivers', {
     where: 'client'
 });
 
+Router.route('/fake/adddrivers/:_count', function(){
+
+    Meteor.call('createFakeUsers', this.request.params._count)
+});
+
