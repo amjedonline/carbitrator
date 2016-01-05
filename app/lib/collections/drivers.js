@@ -101,6 +101,12 @@ Drivers.attachSchema(new SimpleSchema({
     label: "Insurance expiry date",
     optional: true
   },
+  status: {
+    type: String,
+    label: "status",
+    allowedValues: ['PendingApproval', 'Deactivated', 'Active', 'PendingDelete'],
+    optional: true
+  },
   country: {
     type: String,
     label: "Country",
@@ -108,7 +114,7 @@ Drivers.attachSchema(new SimpleSchema({
   },
   state: {
     type: String,
-    label: "State",
+    label: "state",
     optional: true
   },
   city: {
@@ -146,12 +152,10 @@ TabularTables.Drivers = new Tabular.Table({
     {data: "mobile", title: "Mobile"},
     {data: "licensenumber", title: "License no"},
     {data: "insurancenumber", title: "Insurance number"},
-    {data: "mobile", title: "Mobile"},
-    {data: "mobile", title: "Mobile"},
-
-    {data: "summary", title: "Summary"},
+    {data: "status", title: "Status"},
     {
-      tmpl: Meteor.isClient && Template.bookCheckOutCell
+      title: "Actions",
+      tmpl: Meteor.isClient && Template.DriverActionsCell
     }
   ]
 });

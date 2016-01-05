@@ -51,6 +51,7 @@ create_fake_driver = function (){
         insurancenumber: _.random(1512345678, 1798274698),
         insuranceexpirydate: rand_ddmmyyyy(),
         country: 'Turkey',
+        status: 'PendingApproval',
         state: city_state,
         city: city_state,
         addressline1: 'No ' + _.random(1, 50),
