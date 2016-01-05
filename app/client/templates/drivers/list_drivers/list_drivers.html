@@ -66,3 +66,23 @@
     {{/if}}
   </div>
 </template>
+
+
+<template name="DriverActionsCell">
+  <span class="glyphicon glyphicon-edit edit-driver-button cursor-pointer" aria-hidden="true" title="Edit"></span>
+  {{#if status}}
+    {{#if statusIs "Deactivated"}}
+    <span class="glyphicon glyphicon-ok-circle activate-driver-button cursor-pointer" aria-hidden="true" title="Deactivate"></span>
+    {{/if}}
+    {{#if statusIs "Active"}}
+    <span class="glyphicon glyphicon-ban-circle deactivate-driver-button cursor-pointer" aria-hidden="true" title="Activate"></span>
+    {{/if}}
+
+  {{else}}
+    <span class="glyphicon glyphicon-ok approve-driver-button cursor-pointer" aria-hidden="true" title="Approve"></span>
+  {{/if}}
+
+  {{#unless statusIs "PendingDelete"}}
+  <span class="glyphicon glyphicon-remove mark-for-deletion-driver-button cursor-pointer" aria-hidden="true" title="Mark for deletion"></span>
+  {{/unless}}
+</template>

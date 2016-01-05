@@ -24,3 +24,4 @@ twbs:bootstrap
 aldeed:tabular
 aldeed:simple-schema
 meteorhacks:aggregate
+anti:fake

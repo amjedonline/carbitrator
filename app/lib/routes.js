@@ -74,3 +74,50 @@ Router.route('/drivers', {
     where: 'client'
 });
 
+Router.route('/drivers/:_id', {
+    name: 'editDriver',
+    controller: 'DriversController',
+    action: 'edit',
+    where: 'client'
+});
+
+Router.route('/drivers/deactivate/:_id', {
+    name: 'deactivateDriver',
+    controller: 'DriversController',
+    action: 'deactivate',
+    where: 'client'
+});
+
+Router.route('/drivers/activate/:_id', {
+    name: 'activateDriver',
+    controller: 'DriversController',
+    action: 'activate',
+    where: 'client'
+});
+
+Router.route('/drivers/approve/:_id', {
+    name: 'approveDriver',
+    controller: 'DriversController',
+    action: 'approve',
+    where: 'client'
+});
+
+Router.route('/drivers/mark-for-deletion/:_id', {
+    name: 'markForDeletionDriver',
+    controller: 'DriversController',
+    action: 'markForDeletion',
+    where: 'client'
+});
+
+Router.route('/fake/adddrivers/:_count', function(){
+
+    Meteor.call('createFakeUsers', this.request.params._count)
+});
+
+Router.route('/about', function () {
+    this.render('about', {
+        data: function () {
+            return {'company': 'Alotaksim'}
+        }
+    });
+});

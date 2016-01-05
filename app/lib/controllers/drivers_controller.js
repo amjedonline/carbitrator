@@ -36,7 +36,22 @@ DriversController = RouteController.extend({
   edit: function() {
     this.render('EditDriver', {});
   },
-  
+  deactivate: function() {
+    Drivers.update(this.params._id, {$set:{status: 'Deactivated'}});
+    this.render('ListDrivers', {});
+  },
+  activate: function() {
+    Drivers.update(this.params._id, {$set:{status: 'Active'}});
+    this.render('ListDrivers', {});
+  },
+  approve: function() {
+    Drivers.update(this.params._id, {$set:{status: 'Active'}});
+    this.render('ListDrivers', {});
+  },
+  markForDeletion: function() {
+    Drivers.update(this.params._id, {$set:{status: 'PendingDelete'}});
+    this.render('ListDrivers', {});
+  },
   // You can provide any of the hook options
   
   onRun: function () {
