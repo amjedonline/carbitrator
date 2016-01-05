@@ -60,6 +60,20 @@ Router.route('/taxis/:_id', {
     where: 'client'
 });
 
+Router.route('/taxis/activate/:_id', {
+    name: 'activateTaxi',
+    controller: 'TaxisController',
+    action: 'activate',
+    where: 'client'
+});
+
+Router.route('/taxis/block/:_id', {
+    name: 'blockTaxi',
+    controller: 'TaxisController',
+    action: 'block',
+    where: 'client'
+});
+
 Router.route('/drivers/create', {
     name: 'createDriver',
     controller: 'DriversController',

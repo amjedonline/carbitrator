@@ -36,6 +36,14 @@ TaxisController = RouteController.extend({
   edit: function() {
     this.render('EditTaxi', {});
   },
+  activate: function() {
+    Taxis.update(this.params._id, {$set:{status: 'Offline'}});
+    this.render('ListTaxis', {});
+  },
+  block: function() {
+    Taxis.update(this.params._id, {$set:{status: 'Blocked'}});
+    this.render('ListTaxis', {});
+  },
   // You can provide any of the hook options
   
   onRun: function () {

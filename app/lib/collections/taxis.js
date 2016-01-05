@@ -173,6 +173,10 @@ TabularTables.Taxis = new Tabular.Table({
           return "3";
         }
       }
+    },
+    {
+      title: "Actions",
+      tmpl: Meteor.isClient && Template.TaxiActionsCell
     }
   ]
 });
