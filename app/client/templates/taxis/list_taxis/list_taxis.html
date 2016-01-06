@@ -50,3 +50,14 @@
     </tbody>
   </table> -->
 </template>
+
+<template name="TaxiActionsCell">
+  <span class="glyphicon glyphicon-edit edit-taxi-button cursor-pointer" aria-hidden="true" title="Edit"></span>
+
+  {{#if statusIs "Blocked"}}
+  <span class="glyphicon glyphicon-ok-circle activate-taxi-button cursor-pointer" aria-hidden="true" title="Activate"></span>
+  {{else}}
+  <span class="glyphicon glyphicon-ban-circle block-taxi-button cursor-pointer" aria-hidden="true" title="Block"></span>
+  {{/if}}
+
+</template>

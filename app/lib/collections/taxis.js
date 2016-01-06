@@ -162,17 +162,13 @@ TabularTables.Taxis = new Tabular.Table({
     {data: "number", title: "Number"},
     {data: "manufacturer", title: "Manufacturer"},
     {data: "model", title: "Model"},
+    {data: "bodystyle", title: "Body style"},
+    {data: "capacity", title: "Capacity"},
+    {data: "maximumluggage", title: "Maximum Luggage"},
     {data: "status", title: "Status"},
     {
-      data: "funfactor",
-      title: "Fun factor",
-      render: function (val, type, doc) {
-        if (type === 'bodystyle' && val === 'Coupes') {
-          return "5";
-        } else {
-          return "3";
-        }
-      }
+      title: "Actions",
+      tmpl: Meteor.isClient && Template.TaxiActionsCell
     }
   ]
 });
