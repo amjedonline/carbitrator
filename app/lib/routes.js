@@ -4,9 +4,17 @@ Router.configure({
     notFoundTemplate: 'NotFound'
 });
 
+/*
 Router.route('/', {
     name: 'home',
     controller: 'HomeController',
+    where: 'client'
+}); */
+
+Router.route('/', function(){
+    this.redirect('/about');
+    },{
+    name: 'home',
     where: 'client'
 });
 
