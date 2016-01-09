@@ -1,0 +1,17 @@
+<template name="ListAvailabilities">
+  <div class="list-availabilities">
+    <h1>Available taxis</h1>
+    {{#if availabilities}}
+    {{> tabular table=TabularTables.Availabilities class="table table-striped table-bordered table-condensed"}}
+    {{else}}
+    <div>There are no taxis available for service.</div>
+    {{/if}}
+  </div>
+</template>
+
+<template name="AvailabilityActionsCell">
+
+  <span class="glyphicon glyphicon-ban-circle deactivate-driver-button cursor-pointer" aria-hidden="true" title="Deactivate driver"></span>
+  <span class="glyphicon glyphicon-piggy-bank deactivate-taxi-button cursor-pointer" aria-hidden="true" title="Deactivate taxi"></span>
+
+</template>

@@ -6,3 +6,7 @@ Meteor.publish('taxis', function () {
 Meteor.publish('drivers', function () {
   return Drivers.find();
 });
+
+Meteor.publish('availabilities', function () {
+  return Availabilities.find();
+});

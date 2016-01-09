@@ -143,3 +143,20 @@ Router.route('/about', function () {
         }
     });
 });
+
+
+//*******  Availabilities    ************************* */
+
+Router.route('/availabilities/create', {
+    name: 'createAvailability',
+    controller: 'AvailabilitiesController',
+    action: 'create',
+    where: 'client'
+});
+
+Router.route('/availabilities', {
+    name: 'availabilitiesList',
+    controller: 'AvailabilitiesController',
+    action: 'list',
+    where: 'client'
+});
