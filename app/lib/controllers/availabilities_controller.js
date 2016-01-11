@@ -34,6 +34,14 @@ AvailabilitiesController = RouteController.extend({
   list: function() {
     this.render('ListAvailabilities', {})
   },
+  remove: function() {
+    var id = this.params._id;
+    console.log(id);
+    var avail = Availabilities.findOne({'_id': id});
+    var taxi = Taxis.update({'_id': avail.taxi_id}, {'$set': {'status': 'Offline'}});
+    Availabilities.remove({'_id': id});
+    this.render('ListAvailabilities', {})
+  },
   
   // You can provide any of the hook options
   
@@ -45,12 +53,6 @@ AvailabilitiesController = RouteController.extend({
   },
   onBeforeAction: function () {
     this.next();
-  },
-  deactivateDriver: function() {
-    Availabilities.delete
-  },
-  deactivateTaxi: function() {
-
   },
   // The same thing as providing a function as the second parameter. You can
   // also provide a string action name here which will be looked up on a Controller

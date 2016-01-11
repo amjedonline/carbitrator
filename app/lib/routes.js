@@ -154,6 +154,13 @@ Router.route('/availabilities/create', {
     where: 'client'
 });
 
+Router.route('/availabilities/remove/:_id', {
+    name: 'removeAvailability',
+    controller: 'AvailabilitiesController',
+    action: 'remove',
+    where: 'client'
+});
+
 Router.route('/availabilities', {
     name: 'availabilitiesList',
     controller: 'AvailabilitiesController',

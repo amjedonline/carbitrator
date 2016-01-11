@@ -2,11 +2,8 @@
 /* ListAvailabilities: Event Handlers */
 /*****************************************************************************/
 Template.ListAvailabilities.events({
-    'click .deactivate-driver-button': function () {
-        Router.go('/drivers/deactivate/'+this._id);
-    },
-    'click .deactivate-taxi-button': function () {
-        Router.go('/taxis/block/'+this._id);
+    'click .remove-availability-button': function () {
+        Router.go('/availabilities/remove/'+this._id);
     }
 });
 
