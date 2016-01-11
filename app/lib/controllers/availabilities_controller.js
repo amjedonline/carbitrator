@@ -34,6 +34,9 @@ AvailabilitiesController = RouteController.extend({
   list: function() {
     this.render('ListAvailabilities', {})
   },
+  showOnMap: function() {
+    this.render('MapAvailabilities', {})
+  },
   remove: function() {
     var id = this.params._id;
     console.log(id);

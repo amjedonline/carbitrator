@@ -167,3 +167,10 @@ Router.route('/availabilities', {
     action: 'list',
     where: 'client'
 });
+
+Router.route('/mapAvailabilities', {
+    name: 'availabilitiesMap',
+    controller: 'AvailabilitiesController',
+    action: 'showOnMap',
+    where: 'client'
+});
