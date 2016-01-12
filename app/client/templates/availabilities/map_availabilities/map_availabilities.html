@@ -1,5 +1,7 @@
 <template name="MapAvailabilities">
   <div class="map-availabilities">
-    {{> googleMap name="myMap" options=myMapOptions}}
+    <div class="map-container">
+      {{> googleMap name="availabilitiesMap" options=availabilitiesMapOptions}}
+    </div>
   </div>
 </template>
