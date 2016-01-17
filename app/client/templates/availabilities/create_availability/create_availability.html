@@ -1,6 +1,14 @@
 <template name="CreateAvailability">
   <div class="create-availability">
-    <h1>Create New Availability</h1>
-    {{> quickForm collection="Availabilities" id="insertAvailabilityForm" type="insert" buttonContent="Create" }}
+    <h3>Create New Availability</h3>
+    <!-- quickForm collection="Availabilities" id="insertAvailabilityForm" type="insert" buttonContent="Create" }} -->
+    <!--<button type="button" id="drivers">Driver</button> -->
+    <div class="form-group">
+      <input id="driverinput" class="form-control typeahead" name="driverelement"
+             type="text"
+             placeholder="Available driver"
+             autocomplete="off" spellcheck="off"
+             data-source="drivers"/>
+    </div>
   </div>
 </template>
