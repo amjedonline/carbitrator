@@ -7,6 +7,7 @@ AvailabilitiesController = RouteController.extend({
   
   subscriptions: function() {
     this.subscribe('availabilities');
+    this.subscribe('drivers');
   },
   
   // Subscriptions or other things we want to "wait" on. This also

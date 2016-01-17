@@ -23,7 +23,7 @@ Template.MapAvailabilities.helpers({
         if (GoogleMaps.loaded()) {
             // Map initialization options
             return {
-                center: new google.maps.LatLng(-37.8136, 144.9631),
+                center: new google.maps.LatLng(41.0136, 28.9550),
                 zoom: 13
             };
         }

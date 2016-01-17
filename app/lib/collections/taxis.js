@@ -65,7 +65,6 @@ LocationSchema = new SimpleSchema({
       if(!(-180 <= this.value[1] <= 180))
         return "latOutOfRange" ;
     }
-
   }
 });
 
@@ -84,7 +83,7 @@ TaxiSchema = new SimpleSchema({
   manufacturer: {
     type: String,
     label: "Manufacturer",
-    allowedValues: ['Audi', 'Mercedes', 'Volkswagen', 'BMW', 'Toyota', 'Citron', 'Suzuki', 'Renault'],
+    allowedValues: ['Audi', 'Mercedes', 'Volkswagen', 'BMW', 'Toyota', 'Citron', 'Suzuki', 'Renault', 'Fiat'],
   },
   model: {
     type: String,
@@ -94,7 +93,7 @@ TaxiSchema = new SimpleSchema({
   bodystyle: {
     type: String,
     label: "Body Style",
-    allowedValues: ['Convertibles', 'Coupes', 'Hatchbacks', 'Vans', 'Sedans', 'Suvs', 'Trucks', 'Wagons'],
+    allowedValues: ['Convertibles', 'Coupes', 'Hatchbacks', 'Vans', 'Sedans', 'Suvs', 'Trucks', 'Wagons', 'Combi'],
     optional: true
   },
   power: {
