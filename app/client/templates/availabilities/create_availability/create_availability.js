@@ -17,8 +17,10 @@ Template.CreateAvailability.events({
 Template.CreateAvailability.helpers({
     drivers:function(){
         return Drivers.find().fetch().map(function(it){
-            return {value:it.fname};
-        }).slice(0, 100);
+            it['value'] = [it.fname, it.lname, it.email, it.licensenumber].join(' ');
+            return it;
+
+        });
     },
     select: function(e){
         console.log('selected');

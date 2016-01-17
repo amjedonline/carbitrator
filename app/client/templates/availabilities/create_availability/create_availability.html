@@ -3,12 +3,21 @@
     <h3>Create New Availability</h3>
     <!-- quickForm collection="Availabilities" id="insertAvailabilityForm" type="insert" buttonContent="Create" }} -->
     <!--<button type="button" id="drivers">Driver</button> -->
-    <div class="form-group">
-      <input id="driverinput" class="form-control typeahead" name="driverelement"
+    <div class="form-group driver-availability-input">
+      <input id="driverinput" class="form-control inputel typeahead" name="driverel"
              type="text"
              placeholder="Available driver"
              autocomplete="off" spellcheck="off"
-             data-source="drivers"/>
+             data-source="drivers"
+             data-template="driverSuggestion"/>
     </div>
+  </div>
+</template>
+
+<template name="driverSuggestion">
+  <div class="driver-suggestion">
+    <p class="name">{{fname}}, {{lname}}</p>
+    <p class="email"><i>{{email}}</i></p>
+    <p class="description">{{licensenumber}}</p>
   </div>
 </template>

@@ -3,3 +3,28 @@
 /*****************************************************************************/
 .create-availability {
 }
+
+.driver-suggestion .email {
+    float: right;
+    font-style: italic;
+}
+
+.driver-suggestion .name {
+    font-weight: bold;
+}
+
+.driver-suggestion .description {
+    font-size: 14px;
+}
+
+.driver-availability-input .inputel {
+    width: 300px;
+}
+
+.driver-availability-input .tt-suggestion {
+    padding: 8px 20px;
+}
+
+.driver-availability-input .tt-suggestion + .tt-suggestion {
+    border-top: 1px solid #ccc;
+}
